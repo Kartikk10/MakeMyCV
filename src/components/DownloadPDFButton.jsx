@@ -20,7 +20,9 @@ function DownloadPDFButton({
       const html = element.outerHTML;
       const screenWidth = window.innerWidth;
 
-      const res = await fetch("https://makemycv-production.up.railway.app/generate-pdf", {
+      const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
+
+      const res = await fetch(`${API_BASE_URL}/generate-pdf`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ html, screenWidth }),
