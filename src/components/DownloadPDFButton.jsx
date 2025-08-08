@@ -20,7 +20,7 @@ function DownloadPDFButton({
       const html = element.outerHTML;
       const screenWidth = window.innerWidth;
 
-      const res = await fetch("makemycv-production.up.railway.app/generate-pdf", {
+      const res = await fetch("https://makemycv-production.up.railway.app/generate-pdf", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ html, screenWidth }),
