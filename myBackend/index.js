@@ -66,7 +66,7 @@ app.post("/generate-pdf", async (req, res) => {
 
     const page = await browser.newPage();
     await page.setViewport({
-      width: 1285,
+      width: screenWidth,
       height: 900,
     });
     console.log(screenWidth);
