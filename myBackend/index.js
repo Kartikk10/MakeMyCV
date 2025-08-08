@@ -16,7 +16,7 @@ const cssFile = fs
 const cssText = fs.readFileSync(path.join(cssDir, cssFile), "utf-8");
 
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 app.use(
   cors({
